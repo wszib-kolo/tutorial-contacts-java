@@ -7,17 +7,17 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
-@Configuration 
-@ComponentScan("pl.wszib.kolo.controller")
+@Configuration
 @EnableWebMvc
+@ComponentScan({ "pl.wszib.kolo.controller" })
 public class WebConfig {
-	
+
 	@Bean
-	 public UrlBasedViewResolver setupViewResolver() {
-	 UrlBasedViewResolver resolver = new UrlBasedViewResolver();
-	 resolver.setPrefix("/WEB-INF/views/");
-	 resolver.setSuffix(".jsp");
-	 resolver.setViewClass(JstlView.class);
-	 return resolver;
-	 }
+	public UrlBasedViewResolver setupViewResolver() {
+		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+		resolver.setPrefix("/WEB-INF/views/");
+		resolver.setSuffix(".jsp");
+		resolver.setViewClass(JstlView.class);
+		return resolver;
+	}
 }
