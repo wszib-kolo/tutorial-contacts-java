@@ -23,6 +23,14 @@ mvn archetype:generate -DgroupId=pl.wszib.kolo -DartifactId=tutorial-contacts-ja
 * create `WebConfig.java`, `WebInitializer.java`
 
 ## Step `3-hibernate`
+* create database
+
+```
+CREATE DATABASE contacts CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'contacts'@'localhost' IDENTIFIED BY 'contacts123';
+GRANT ALL ON contacts.* to contacts@localhost;
+FLUSH PRIVILEGES;
+```
 
 * add `hibernate`, `mysql` dependencies into your `pom.xml`
 * create `SpringConfiguration.java` with hibernate configuration
